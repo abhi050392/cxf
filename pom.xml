@@ -7,7 +7,7 @@
     <groupId>io.fabric8.quickstarts.cxf</groupId>
     <artifactId>spring-boot-cxf-multi-module</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+	<packaging>pom</packaging>
     <name>Fabric8 :: Quickstarts :: Spring-Boot :: CXF JAXWS JAXRS</name>
     <description>Spring Boot example running a CXF JAXWS JAXRS</description>
 
@@ -28,86 +28,11 @@
 
     <dependencies>
 
-        <dependency>
-            <groupId>io.fabric8.quickstarts.cxf.jaxws</groupId>
-            <artifactId>spring-boot-cxf-jaxws-xml</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-undertow</artifactId>
-			<version>1.0-SNAPSHOT</version>
-        </dependency>
+        
 
     </dependencies>
 
-    <build>
-        <defaultGoal>spring-boot:run</defaultGoal>
-
-        <plugins>
-
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven-surefire-plugin.version}</version>
-                <inherited>true</inherited>
-                <configuration>
-                    <argLine>-DenableImageStreamDetection=true</argLine>
-                    <excludes>
-                        <exclude>**/*KT.java</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-        </plugins>
-    </build>
-
-    <profiles>
-        <profile>
-            <id>openshift</id>
-            <build>
-                <plugins>
-
-                    <plugin>
-                        <groupId>io.fabric8</groupId>
-                        <artifactId>fabric8-maven-plugin</artifactId>
-                        <version>${fabric8.maven.plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>resource</goal>
-                                    <goal>build</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
+   
 	<modules>
 	    <module>spring-boot-cxf-jaxrs-master</module>
 	    <module>spring-boot-cxf-jaxws-xml-master</module>
