@@ -108,5 +108,9 @@
             </build>
         </profile>
     </profiles>
-
+	<modules>
+	    <module>spring-boot-cxf-jaxrs-master</module>
+	    <module>spring-boot-cxf-jaxws-xml-master</module>
+		<module>spring-boot-cxf-multi-module</module>
+	</modules>
 </project>
