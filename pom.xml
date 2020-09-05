@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.fabric8.quickstarts.cxf</groupId>
-    <artifactId>spring-boot-cxf-multi-module</artifactId>
+    <artifactId>spring-boot-cxf-multi-module1</artifactId>
     <version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
     <name>Fabric8 :: Quickstarts :: Spring-Boot :: CXF JAXWS JAXRS</name>
