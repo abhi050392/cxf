@@ -20,8 +20,6 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.cdi.ContextName;
 import org.apache.camel.model.rest.RestBindingMode;
 
-import com.openshift.blog.example.common.model.CountryModel;
-
 /**
  * Route definition for CountryService
  * 
@@ -47,11 +45,9 @@ public class CountryServiceRoute extends RouteBuilder {
 		
 		 	.get("/country")
 		 		.description("Retrieve a random country name")
-		 		.outType(CountryModel.class)
 		 		.to("direct:country");
 		 
 		 from("direct:country").id("countryProcessorRoute")
-		 .processRef("countryProcessor")
 		 .log("Response sent: ${body}");
 	}
 
