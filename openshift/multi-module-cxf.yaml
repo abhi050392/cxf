@@ -90,6 +90,7 @@ objects:
           deploymentconfig: cxf-multi
       spec:
         containers:
+        - env:
           image: cxf-multi
           imagePullPolicy: Always
           name: cxf-multi
